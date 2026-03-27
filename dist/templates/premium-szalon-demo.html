@@ -44,31 +44,52 @@
       <section id="qualify" class="qualify reveal">
         <h2>Előszűrő kérdőív pontozással</h2>
         <p class="meta">
-          Ez segít eldönteni, hogy concierge vagy alap konzultáció legyen az első lépés.
+          Ez segít eldönteni, hogy concierge vagy alap konzultáció legyen az
+          első lépés.
         </p>
         <div class="quiz-grid">
           <article class="quiz-question">
             <h3>1) Mennyit tudsz rászánni egy alkalomra?</h3>
-            <label><input type="radio" name="q1" data-score="3" checked /> 60-75 perc</label>
-            <label><input type="radio" name="q1" data-score="6" /> 90+ perc</label>
+            <label
+              ><input type="radio" name="q1" data-score="3" checked /> 60-75
+              perc</label
+            >
+            <label
+              ><input type="radio" name="q1" data-score="6" /> 90+ perc</label
+            >
           </article>
           <article class="quiz-question">
             <h3>2) Nyitott vagy prémium otthoni rutinra?</h3>
-            <label><input type="radio" name="q2" data-score="2" checked /> Inkább egyszerű rutin</label>
-            <label><input type="radio" name="q2" data-score="5" /> Igen, követem a tervet</label>
+            <label
+              ><input type="radio" name="q2" data-score="2" checked /> Inkább
+              egyszerű rutin</label
+            >
+            <label
+              ><input type="radio" name="q2" data-score="5" /> Igen, követem a
+              tervet</label
+            >
           </article>
           <article class="quiz-question">
             <h3>3) Mennyire fontos az egyedi, személyre szabott look?</h3>
-            <label><input type="radio" name="q3" data-score="3" checked /> Fontos, de rugalmas</label>
-            <label><input type="radio" name="q3" data-score="7" /> Ez az elsődleges célom</label>
+            <label
+              ><input type="radio" name="q3" data-score="3" checked /> Fontos,
+              de rugalmas</label
+            >
+            <label
+              ><input type="radio" name="q3" data-score="7" /> Ez az elsődleges
+              célom</label
+            >
           </article>
         </div>
 
         <div class="quiz-result-box">
-          <button id="quizCalc" type="button" class="btn primary">Pontszám kiszámítása</button>
+          <button id="quizCalc" type="button" class="btn primary">
+            Pontszám kiszámítása
+          </button>
           <p>Pontszám: <strong id="quizScore">8 pont</strong></p>
           <p id="quizResult">
-            Töltsd ki a kérdéseket, majd nézd meg, melyik belépési útvonal ajánlott.
+            Töltsd ki a kérdéseket, majd nézd meg, melyik belépési útvonal
+            ajánlott.
           </p>
         </div>
       </section>
@@ -140,7 +161,12 @@
           <label>Név<input type="text" required /></label>
           <label>E-mail<input type="email" required /></label>
           <label>Konzultáció<input type="datetime-local" required /></label>
-          <input id="scoreInput" type="hidden" name="qualificationScore" value="8" />
+          <input
+            id="scoreInput"
+            type="hidden"
+            name="qualificationScore"
+            value="8"
+          />
           <button type="submit" class="btn primary">
             Concierge jelentkezés
           </button>

@@ -121,20 +121,34 @@
           <div class="slot-picker">
             <p class="slot-title">Válassz időablakot:</p>
             <div class="slot-buttons">
-              <button type="button" data-slot="10:30" class="slot-btn is-active">
+              <button
+                type="button"
+                data-slot="10:30"
+                class="slot-btn is-active"
+              >
                 10:30
               </button>
-              <button type="button" data-slot="12:00" class="slot-btn">12:00</button>
-              <button type="button" data-slot="15:40" class="slot-btn">15:40</button>
-              <button type="button" data-slot="18:10" class="slot-btn">18:10</button>
+              <button type="button" data-slot="12:00" class="slot-btn">
+                12:00
+              </button>
+              <button type="button" data-slot="15:40" class="slot-btn">
+                15:40
+              </button>
+              <button type="button" data-slot="18:10" class="slot-btn">
+                18:10
+              </button>
             </div>
-            <p class="slot-picked">Kiválasztott idősáv: <strong id="selectedSlot">10:30</strong></p>
+            <p class="slot-picked">
+              Kiválasztott idősáv: <strong id="selectedSlot">10:30</strong>
+            </p>
           </div>
         </div>
         <form class="booking-form" action="#" method="post">
           <label>Név<input type="text" required /></label>
           <label>Telefon<input type="tel" required /></label>
-          <label>Megjegyzés<input type="text" placeholder="Pl. skin fade + szakáll" /></label>
+          <label
+            >Megjegyzés<input type="text" placeholder="Pl. skin fade + szakáll"
+          /></label>
           <input id="slotInput" type="hidden" name="slot" value="10:30" />
           <button type="submit" class="btn primary">Foglalás elküldése</button>
         </form>

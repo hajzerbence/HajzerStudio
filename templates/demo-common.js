@@ -1,6 +1,10 @@
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 document.documentElement.classList.add("js");
 
 const profile = document.body.dataset.profile || "barber";
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function initRevealFallback() {
   const blocks = document.querySelectorAll(".reveal");
@@ -21,12 +25,12 @@ function initRevealFallback() {
 }
 
 function initProfileMotion() {
-  if (!(window.gsap && window.ScrollTrigger)) {
-    initRevealFallback();
+  if (prefersReducedMotion) {
+    document.querySelectorAll(".reveal").forEach((node) => node.classList.add("is-visible"));
     return;
   }
 
-  window.gsap.registerPlugin(window.ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
   const configMap = {
     barber: { y: 26, ease: "power2.out", duration: 0.5, stagger: 0.08 },
@@ -36,21 +40,22 @@ function initProfileMotion() {
 
   const config = configMap[profile] || configMap.barber;
 
-  window.gsap.utils.toArray(".reveal").forEach((node) => {
-    window.gsap.from(node, {
-      y: config.y,
-      opacity: 0,
+  gsap.utils.toArray(".reveal").forEach((node) => {
+    gsap.to(node, {
+      y: 0,
+      opacity: 1,
       duration: config.duration,
       ease: config.ease,
       scrollTrigger: {
         trigger: node,
         start: "top 84%",
+        once: true,
       },
     });
   });
 
   if (profile === "barber") {
-    window.gsap.from(".slot-item", {
+    gsap.from(".slot-item", {
       x: -24,
       opacity: 0,
       stagger: 0.08,
@@ -62,7 +67,7 @@ function initProfileMotion() {
   }
 
   if (profile === "women") {
-    window.gsap.to(".floating-shape", {
+    gsap.to(".floating-shape", {
       y: -18,
       repeat: -1,
       yoyo: true,
@@ -72,7 +77,7 @@ function initProfileMotion() {
   }
 
   if (profile === "premium") {
-    window.gsap.from(".quiz-question", {
+    gsap.from(".quiz-question", {
       x: 18,
       opacity: 0,
       duration: 0.6,
@@ -83,31 +88,6 @@ function initProfileMotion() {
       },
     });
   }
-}
-
-function initFormFeedback() {
-  const form = document.querySelector(".booking-form");
-  if (!form) {
-    return;
-  }
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const submit = form.querySelector('button[type="submit"]');
-    if (!submit) {
-      return;
-    }
-
-    const original = submit.textContent;
-    submit.disabled = true;
-    submit.textContent = "Köszönjük, hamarosan visszajelzünk.";
-
-    window.setTimeout(() => {
-      form.reset();
-      submit.disabled = false;
-      submit.textContent = original;
-    }, 2200);
-  });
 }
 
 function initPricingCalc() {
@@ -172,15 +152,15 @@ function initWomenProfileSelector() {
   const map = {
     elegance: {
       title: "Elegáns megjelenés csomag",
-      body: "Signature vágás + tónusfrissítés + fényzáró finish, 90 perces ajánlott útvonal.",
+      body: "Signature vágás, tónusfrissítés és finish egy olyan vendégútvonalban, ami már az oldalon is prémium érzést ad.",
     },
     volume: {
-      title: "Volumen és textúra csomag",
-      body: "Réteges vágás + root lift kezelés + otthoni rutin ajánlás.",
+      title: "Volumen és texturációs csomag",
+      body: "Rétegzettebb kommunikációhoz olyan oldalstruktúra ideális, ahol a stílusmatch és a csomagajánlás egyszerre dolgozik.",
     },
     repair: {
       title: "Repair fókusz csomag",
-      body: "Mélyhidratáló kezelés + formaigazítás + 4 hetes utánkövetési terv.",
+      body: "A kommunikáció itt a bizalomról, problémamegoldásról és utánkövetési érzetről kell szóljon.",
     },
   };
 
@@ -257,25 +237,71 @@ function initPremiumQuiz() {
 
     if (score >= 18) {
       resultTarget.textContent =
-        "Kiemelten jó illeszkedés. Javasolt: 90 perces concierge konzultáció.";
+        "Kiemelten jó illeszkedés. Itt egy concierge jellegű flow tud a legjobban zárni.";
       return;
     }
 
     if (score >= 12) {
       resultTarget.textContent =
-        "Jó alap. Először egy rövidebb online előhívást ajánlunk, majd személyes időpontot.";
+        "Jól szűrhető lead. Először egy rövidebb online előhívás vagy konzultációs landing a legerősebb.";
       return;
     }
 
     resultTarget.textContent =
-      "Most még nem ideális high-ticket csomagra. Kezdjünk egy kisebb, alap kezeléssel.";
+      "Itt meg inkabb edukaciosabb, bizalomepitobb beleso oldal iranyat javasolnam.";
   });
 }
 
-initProfileMotion();
-initFormFeedback();
+function initFormFeedback() {
+  const form = document.querySelector(".booking-form");
+  if (!(form instanceof HTMLFormElement)) {
+    return;
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const submit = form.querySelector('button[type="submit"]');
+    if (!(submit instanceof HTMLButtonElement)) {
+      return;
+    }
+
+    const fields = Array.from(form.querySelectorAll("input, textarea, select"));
+    const summary = fields
+      .filter((field) => field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement || field instanceof HTMLSelectElement)
+      .map((field) => {
+        const label = field.closest("label")?.childNodes[0]?.textContent?.trim() || field.name || "Field";
+        const value =
+          field instanceof HTMLInputElement && field.type === "hidden" ? field.value : field.value || "-";
+        return `${label}: ${value}`;
+      })
+      .join("\n");
+
+    const subject = encodeURIComponent(`Demó érdeklődés (${profile})`);
+    const body = encodeURIComponent(
+      `Szia,\n\negy demó oldalon keresztül jött érdeklődés.\n\nProfil: ${profile}\n${summary}\n`,
+    );
+
+    const original = submit.textContent;
+    submit.disabled = true;
+    submit.textContent = "Email draft nyitasa...";
+    window.location.href = `mailto:hello@hajzerstudio.hu?subject=${subject}&body=${body}`;
+
+    window.setTimeout(() => {
+      submit.disabled = false;
+      submit.textContent = original;
+    }, 1400);
+  });
+}
+
 initPricingCalc();
 initBeforeAfter();
 initWomenProfileSelector();
 initBarberFunnel();
 initPremiumQuiz();
+initFormFeedback();
+
+try {
+  initProfileMotion();
+} catch {
+  initRevealFallback();
+}

@@ -1,71 +1,54 @@
 # HajzerStudio
 
-Prémium weboldalak fodrászoknak és barber shopoknak. Gyors, mobilbarát, ügyfélszerzésre optimalizált kivitelezés.
+Conversion-focused portfolio site for a web developer targeting beauty, salon and barber businesses through cold outreach.
 
-## Mi ez a projekt?
+## What this repo is now
 
-Ez a repository a saját portfóliód és egyben ügyfél-sablon alapod. A cél, hogy ebből gyorsan tudj niche oldalakat indítani magyar szalonoknak.
+This is no longer just a simple static landing page.
+It is a niche sales asset with:
 
-## Jelenlegi állapot
+- a stronger positioning-first homepage
+- real HU/EN language switching
+- interactive revenue upside calculator
+- instant concept builder / pain-point selector
+- structured email-brief contact flow without backend overhead
+- three separate demo funnels for different beauty business models
+- local `gsap` dependency instead of CDN-based animation scripts
 
-- Teljesen reszponzív, prémium egyoldalas weboldal
-- Ékezetes magyar tartalom
-- Több értékesítési szekció (eredmények, folyamat, csomagok, GYIK, kapcsolat)
-- Mobil menü és aktív menüpont követés
-- Belépő animációk és letisztult interakciók
+## Pages
 
-## Fájlszerkezet
+- `index.html`: main portfolio / sales page
+- `templates/barber-shop-demo.html`: barber fast-booking funnel demo
+- `templates/noi-fodraszat-demo.html`: salon consultation funnel demo
+- `templates/premium-szalon-demo.html`: premium qualification funnel demo
 
-- `index.html`: szerkezet és tartalom
-- `styles.css`: dizájnrendszer, elrendezés, reszponzív viselkedés
-- `script.js`: navigáció, animációk, űrlap UX
+## Main code structure
 
-## Gyors indítás
+- `src/main.ts`: homepage rendering, i18n, calculator, concept builder, contact brief flow, motion
+- `styles.css`: homepage visual system and responsive layout
+- `templates/demo-common.js`: shared demo interactions and local GSAP motion
+- `templates/*.css`: visual layer for each demo page
+- `vite.config.ts`: multi-page Vite build config
 
-1. Nyisd meg az `index.html` fájlt böngészőben.
-2. Cseréld a kontakt adatokat a sajátodra (`e-mail`, `telefon`).
-3. Finomhangold az árakat és csomagneveket a célpiacodhoz.
-4. Tedd fel az oldalt Netlify vagy Vercel alá.
+## Scripts
 
-## Mit készíts el következőként?
+```bash
+npm install
+npm run dev
+npm run build
+npm run preview
+```
 
-1. `templates/` mappa 3 stílussal:
-   - `barber-legacy.html`
-   - `salon-elegance.html`
-   - `urban-fade.html`
-2. Minden sablonhoz külön demo link
-3. Rövid ajánlat PDF (1 oldal):
-   - Mi a probléma
-   - Mit oldasz meg
-   - Mennyiért
-   - Mennyi idő alatt
+## Why it is structured this way
 
-## Ügyfélszerzés: 30 napos végrehajtási terv
+The goal is to help close attention after cold calling:
 
-1. Nap 1-3: készítsd el a 3 demó oldalt.
-2. Nap 4-7: gyűjts 100 potenciális szalont (Google Maps, Instagram, Facebook).
-3. Nap 8-30: napi 10-20 kapcsolatfelvétel (telefon + DM + e-mail).
-4. Minden megkeresés után 24 órán belül follow-up.
-5. Zárási cél: legalább 2 fizetős ügyfél az első hónapban.
+- the homepage explains the offer in business terms, not just visual terms
+- the demo pages let you send a relevant example immediately
+- the contact flow creates a usable, structured brief instead of a weak generic message
 
-## Ajánlott csomagstruktúra
+## Notes
 
-- Start: 149 000 Ft
-- Pro: 239 000 Ft
-- Managed: 59 000 Ft / hó
-- Domain + tárhely: külön tételben, ügyféligény szerint
-
-## Minőségellenőrzés minden átadás előtt
-
-- Mobilnézet (iOS + Android méretek)
-- Betöltési sebesség ellenőrzés
-- CTA-k tesztelése (telefon, e-mail, üzenet)
-- Nyelvi ellenőrzés (helyesírás, ékezetek)
-- Meta title + meta description kitöltése
-
-## Következő fejlesztési irányok
-
-1. Képgaléria lightbox támogatással
-2. Egyszerű adminfelület vagy CMS-kötés
-3. Esettanulmány aloldalak
-4. Többnyelvűség (HU/EN)
+- Current contact handling opens an email draft with a structured summary instead of using a backend.
+- Animation is bundled locally through `gsap`, so the site no longer depends on external animation CDNs.
+- `npm audit fix` has already been run and the dependency tree is currently clean.

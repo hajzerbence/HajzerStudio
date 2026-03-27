@@ -3,393 +3,310 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HajzerStudio | Prémium szépségipari weboldalak</title>
+    <title>HajzerStudio | Beauty niche websites that turn visits into bookings</title>
     <meta
       name="description"
-      content="HajzerStudio: prémium, cinematic weboldalak szépségipari vállalkozásoknak."
+      content="HajzerStudio builds premium, conversion-focused websites for beauty brands, salons and barber shops that need more bookings and a stronger first impression."
     />
+    <meta
+      property="og:title"
+      content="HajzerStudio | Premium websites for beauty businesses"
+    />
+    <meta
+      property="og:description"
+      content="Portfolio and live demos for premium salon, barber and beauty websites built to close more bookings."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/assets/HajzerStudioBG-D_-UV9ls.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap"
       rel="stylesheet"
-    />
-    <script type="module" crossorigin src="/assets/main-BwYqslMs.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="stylesheet" crossorigin href="/assets/main-j-tXp3PF.css">
+    />
+    <script type="module" crossorigin src="/assets/main-C-UaBSpK.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/ScrollTrigger-CJa91OC3.js">
+    <link rel="stylesheet" crossorigin href="/assets/main-DEqyAYZD.css">
   </head>
   <body>
+    <div class="page-noise" aria-hidden="true"></div>
     <div class="ambient ambient-a" aria-hidden="true"></div>
     <div class="ambient ambient-b" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a href="#top" class="brand" aria-label="HajzerStudio nyitólap">
+      <a href="#top" class="brand" aria-label="HajzerStudio home">
         <span class="brand-badge">
-          <img
-            src="/assets/HajzerStudioNoBG-BNGmHxsS.png"
-            alt="HajzerStudio logó"
-            class="brand-logo"
-          />
+          <img src="/assets/HajzerStudioNoBG-BNGmHxsS.png" alt="HajzerStudio logo" class="brand-logo" />
         </span>
-        <span>HajzerStudio</span>
+        <span class="brand-copy">
+          <strong>HajzerStudio</strong>
+          <span id="brandSubline">Beauty niche web systems</span>
+        </span>
       </a>
 
       <button
         id="menuBtn"
         class="menu-btn"
+        type="button"
         aria-expanded="false"
         aria-controls="mainNav"
       >
-        Menü
+        Menu
       </button>
 
-      <nav id="mainNav" class="main-nav" aria-label="Fő navigáció">
-        <a href="#templates" data-i18n="nav_templates">Demók</a>
-        <a href="#story" data-i18n="nav_story">Folyamat</a>
-        <a href="#gallery" data-i18n="nav_gallery">Galéria</a>
-        <a href="#proof" data-i18n="nav_proof">Visszajelzés</a>
-        <a href="#contact" data-i18n="nav_contact">Kapcsolat</a>
+      <nav id="mainNav" class="main-nav" aria-label="Primary navigation">
+        <a href="#demos" id="navDemos"></a>
+        <a href="#outcomes" id="navOutcomes"></a>
+        <a href="#system" id="navSystem"></a>
+        <a href="#faq" id="navFaq"></a>
+        <a href="#contact" id="navContact"></a>
       </nav>
 
-      <div class="lang-switch" role="group" aria-label="Nyelvváltó">
-        <button class="lang-btn is-active" data-lang="hu">HU</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="de">DE</button>
+      <div class="lang-switch" role="group" aria-label="Language switch">
+        <button class="lang-btn" type="button" data-lang="hu">HU</button>
+        <button class="lang-btn" type="button" data-lang="en">EN</button>
       </div>
     </header>
 
     <main id="top" data-ts-ready="pending">
-      <section class="section hero">
-        <div class="hero-media" aria-hidden="true">
-          <video
-            class="hero-video"
-            autoplay
-            muted
-            loop
-            playsinline
-            poster="/assets/HajzerStudioBG-D_-UV9ls.png"
-          >
-            <source
-              src="https://cdn.coverr.co/videos/coverr-smiling-hairdresser-1579/1080p.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <div class="hero-layer hero-layer-a" data-speed="0.55"></div>
-          <div class="hero-layer hero-layer-b" data-speed="0.35"></div>
-          <div class="hero-media-overlay"></div>
-        </div>
-
+      <section class="hero" id="hero">
         <div class="hero-copy">
-          <p class="kicker hero-kicker" data-i18n="hero_kicker">
-            SZÉPSÉGIPARI PRÉMIUM RENDSZER
-          </p>
-          <h1>
-            <span class="hero-line" data-i18n="hero_line_1"
-              >Erős első benyomás.</span
-            >
-            <span class="hero-line" data-i18n="hero_line_2"
-              >Tudatos ügyfélszerzés.</span
-            >
-            <span class="hero-line" data-i18n="hero_line_3"
-              >Valódi márkaérzet.</span
-            >
-          </h1>
-          <p class="hero-lead" data-i18n="hero_lead">
-            Nem csak egy szép felületet kapsz. Olyan oldalt építünk, amit a
-            vendég könnyen ért, és ezért nagyobb eséllyel foglal.
-          </p>
+          <p class="eyebrow" id="heroEyebrow"></p>
+          <h1 class="hero-title" id="heroTitle"></h1>
+          <p class="hero-lead" id="heroLead"></p>
+
           <div class="hero-actions">
-            <a
-              href="#templates"
-              class="btn btn-primary"
-              data-i18n="hero_cta_primary"
-              >Demók megnyitása</a
-            >
-            <a
-              href="#contact"
-              class="btn btn-ghost"
-              data-i18n="hero_cta_secondary"
-              >Kérek koncepciót</a
-            >
+            <a href="#demos" class="btn btn-primary" id="heroPrimaryCta"></a>
+            <a href="#contact" class="btn btn-secondary" id="heroSecondaryCta"></a>
           </div>
-          <div class="hero-stats">
-            <article>
-              <strong>3</strong
-              ><span data-i18n="stat_1">eltérő üzleti logika</span>
-            </article>
-            <article>
-              <strong>4-6 hét</strong
-              ><span data-i18n="stat_2">átadás tesztelve mobilra</span>
-            </article>
-            <article>
-              <strong>HU/EN/DE</strong
-              ><span data-i18n="stat_3">többnyelvű alap</span>
-            </article>
-          </div>
+
+          <div class="hero-points" id="heroPoints"></div>
+
+          <div class="hero-metrics" id="heroMetrics"></div>
         </div>
 
-        <div class="hero-visual">
-          <img
-            src="/assets/HajzerStudioBG-D_-UV9ls.png"
-            alt="HajzerStudio borítókép"
-            class="hero-image"
-          />
-          <div class="hero-overlay">
-            <img src="/assets/HajzerStudioNoBG-BNGmHxsS.png" alt="HajzerStudio jel" />
-            <p data-i18n="founder_badge">
-              Személyes márka. Kimondottan szépségiparra.
-            </p>
+        <aside class="hero-panel">
+          <div class="hero-panel-top">
+            <p class="eyebrow" id="offerEyebrow"></p>
+            <h2 id="offerTitle"></h2>
+            <p id="offerLead"></p>
           </div>
-        </div>
+
+          <div class="offer-stack" id="offerStack"></div>
+
+          <div class="offer-proof">
+            <article>
+              <span id="proofStatAValue"></span>
+              <p id="proofStatALabel"></p>
+            </article>
+            <article>
+              <span id="proofStatBValue"></span>
+              <p id="proofStatBLabel"></p>
+            </article>
+          </div>
+        </aside>
       </section>
 
-      <section id="templates" class="section section-promoted">
-        <div class="section-head gsap-reveal">
-          <p class="kicker" data-i18n="templates_kicker">KIEMELT DEMÓK</p>
-          <h2 data-i18n="templates_title">
-            Nem csak dizájnban, működésben is eltérő rendszerek
-          </h2>
+      <section class="section section-grid" id="demos">
+        <div class="section-head reveal">
+          <p class="eyebrow" id="demosEyebrow"></p>
+          <h2 id="demosTitle"></h2>
+          <p class="section-lead" id="demosLead"></p>
         </div>
-        <div class="template-grid">
-          <article class="template-card gsap-reveal">
-            <p class="tag">BARBER FUNNEL</p>
-            <h3>Barber Shop Demo</h3>
-            <p data-i18n="template_1">
-              Gyors döntés, időablak-foglaló, és azonnali CTA a szabad helyekre.
-            </p>
-            <div class="template-actions">
-              <a
-                href="./templates/barber-shop-demo.html"
-                class="btn btn-primary"
-                >Demó megnyitása</a
-              >
-            </div>
-          </article>
-          <article class="template-card gsap-reveal">
-            <p class="tag">STYLE CONSULT</p>
-            <h3>Női Fodrászat Demo</h3>
-            <p data-i18n="template_2">
-              Stílus-konzultációs logika vendégprofil útvonallal és ajánlott
-              csomagokkal.
-            </p>
-            <div class="template-actions">
-              <a
-                href="./templates/noi-fodraszat-demo.html"
-                class="btn btn-primary"
-                >Demó megnyitása</a
-              >
-            </div>
-          </article>
-          <article class="template-card gsap-reveal">
-            <p class="tag">CONCIERGE FLOW</p>
-            <h3>Prémium Szalon Demo</h3>
-            <p data-i18n="template_3">
-              Előszűrő kérdőív pontozással, csak megfelelő lead jut tovább.
-            </p>
-            <div class="template-actions">
-              <a
-                href="./templates/premium-szalon-demo.html"
-                class="btn btn-primary"
-                >Demó megnyitása</a
-              >
-            </div>
-          </article>
-        </div>
+        <div class="demo-grid" id="demoGrid"></div>
       </section>
 
-      <section id="story" class="section">
-        <div class="section-head gsap-reveal">
-          <p class="kicker" data-i18n="story_kicker">STICKY STORYTELLING</p>
-          <h2 data-i18n="story_title">
-            Görgetés közben épülő értékajánlat, valódi haladásjelzővel
-          </h2>
+      <section class="section section-grid" id="outcomes">
+        <div class="section-head reveal">
+          <p class="eyebrow" id="outcomesEyebrow"></p>
+          <h2 id="outcomesTitle"></h2>
+          <p class="section-lead" id="outcomesLead"></p>
         </div>
-        <div class="story-layout" id="storyLayout">
-          <aside class="story-sticky">
-            <div class="story-screen" id="storyScreen">
-              <img
-                src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1100&q=80"
-                alt="Story vizuál"
-                id="storyImage"
-              />
-              <div>
-                <p class="story-label" id="storyLabel">01 / Első benyomás</p>
-                <h3 id="storyTitle">
-                  A látvány első 3 másodperce eldönti a bizalmat.
-                </h3>
-              </div>
+        <div class="value-grid" id="valueGrid"></div>
+      </section>
+
+      <section class="section calculator-section" id="calculator">
+        <div class="section-head reveal">
+          <p class="eyebrow" id="calculatorEyebrow"></p>
+          <h2 id="calculatorTitle"></h2>
+          <p class="section-lead" id="calculatorLead"></p>
+        </div>
+
+        <div class="calculator-shell reveal">
+          <div class="calculator-form">
+            <label>
+              <span id="labelVisits"></span>
+              <input id="inputVisits" type="range" min="200" max="6000" step="100" value="1400" />
+              <output id="outputVisits"></output>
+            </label>
+            <label>
+              <span id="labelConversion"></span>
+              <input id="inputConversion" type="range" min="1" max="20" step="1" value="5" />
+              <output id="outputConversion"></output>
+            </label>
+            <label>
+              <span id="labelTicket"></span>
+              <input id="inputTicket" type="range" min="8000" max="60000" step="1000" value="18000" />
+              <output id="outputTicket"></output>
+            </label>
+            <label>
+              <span id="labelUplift"></span>
+              <input id="inputUplift" type="range" min="10" max="120" step="5" value="35" />
+              <output id="outputUplift"></output>
+            </label>
+          </div>
+
+          <aside class="calculator-results">
+            <p class="eyebrow" id="calculatorResultEyebrow"></p>
+            <div class="result-tile">
+              <span id="resultExtraBookings"></span>
+              <p id="resultExtraBookingsLabel"></p>
             </div>
+            <div class="result-tile result-tile-accent">
+              <span id="resultExtraRevenue"></span>
+              <p id="resultExtraRevenueLabel"></p>
+            </div>
+            <p class="result-note" id="calculatorNote"></p>
           </aside>
-          <div class="story-steps-wrap">
-            <div class="story-progress" aria-hidden="true">
-              <span class="story-progress-fill" id="storyProgressFill"></span>
-            </div>
-            <div
-              class="story-dots"
-              id="storyDots"
-              aria-label="Story lépések"
-            ></div>
-            <div class="story-steps">
-              <article
-                class="story-step"
-                data-image="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1100&q=80"
-                data-label="01 / Első benyomás"
-                data-title="A látvány első 3 másodperce eldönti a bizalmat."
-              >
-                <h3>01. Vizuális belépő</h3>
-                <p>
-                  Prémium tipográfia, tiszta ritmus, fókuszált hero - nincs zaj,
-                  nincs túlírás.
-                </p>
-              </article>
-              <article
-                class="story-step"
-                data-image="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1100&q=80"
-                data-label="02 / Döntési út"
-                data-title="A látogatót végig vezetjük a döntésen."
-              >
-                <h3>02. Döntési útvonal</h3>
-                <p>
-                  Nem információhalom, hanem egymásra épülő blokkok:
-                  szolgáltatások, bizalom és érthető CTA.
-                </p>
-              </article>
-              <article
-                class="story-step"
-                data-image="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1100&q=80"
-                data-label="03 / Konverzió"
-                data-title="A design nem dísz, hanem konverziós eszköz."
-              >
-                <h3>03. Konverzió</h3>
-                <p>
-                  Űrlap, foglalás, kapcsolatfelvétel egyértelmű és
-                  súrlódásmentes, mobilon is.
-                </p>
-              </article>
-            </div>
+        </div>
+      </section>
+
+      <section class="section process-section" id="system">
+        <div class="section-head reveal">
+          <p class="eyebrow" id="systemEyebrow"></p>
+          <h2 id="systemTitle"></h2>
+          <p class="section-lead" id="systemLead"></p>
+        </div>
+
+        <div class="process-layout">
+          <aside class="process-panel reveal">
+            <p class="eyebrow" id="processPanelEyebrow"></p>
+            <p class="process-stage" id="processStage"></p>
+            <h3 id="processPanelTitle"></h3>
+            <p class="process-panel-copy" id="processPanelCopy"></p>
+            <ul class="process-bullets" id="processBullets"></ul>
+          </aside>
+
+          <div class="process-steps" id="processSteps"></div>
+        </div>
+      </section>
+
+      <section class="section brief-section" id="brief">
+        <div class="section-head reveal">
+          <p class="eyebrow" id="briefEyebrow"></p>
+          <h2 id="briefTitle"></h2>
+          <p class="section-lead" id="briefLead"></p>
+        </div>
+
+        <div class="brief-layout">
+          <div class="challenge-picker reveal">
+            <div class="challenge-list" id="challengeList"></div>
           </div>
+
+          <aside class="brief-panel reveal">
+            <p class="eyebrow" id="briefPanelEyebrow"></p>
+            <h3 id="briefPanelTitle"></h3>
+            <p id="briefPanelLead"></p>
+            <div class="brief-tags" id="briefTags"></div>
+            <div class="brief-recommendations" id="briefRecommendations"></div>
+          </aside>
         </div>
       </section>
 
-      <section id="gallery" class="section">
-        <div class="section-head gsap-reveal">
-          <p class="kicker" data-i18n="gallery_kicker">GALÉRIA</p>
-          <h2 data-i18n="gallery_title">
-            A képi világ is a márkát adja el, nem csak a szöveg
-          </h2>
+      <section class="section faq-section" id="faq">
+        <div class="section-head reveal">
+          <p class="eyebrow" id="faqEyebrow"></p>
+          <h2 id="faqTitle"></h2>
+          <p class="section-lead" id="faqLead"></p>
         </div>
-        <div class="gallery-grid">
-          <figure class="gsap-reveal">
-            <img
-              src="https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?auto=format&fit=crop&w=1000&q=80"
-              alt="Barber eszközök"
-            />
-          </figure>
-          <figure class="gsap-reveal">
-            <img
-              src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1000&q=80"
-              alt="Női fodrászat"
-            />
-          </figure>
-          <figure class="gsap-reveal">
-            <img
-              src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=1000&q=80"
-              alt="Szalon enteriőr"
-            />
-          </figure>
-          <figure class="gsap-reveal">
-            <img
-              src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=1000&q=80"
-              alt="Hajformázás"
-            />
-          </figure>
-        </div>
+        <div class="faq-grid" id="faqGrid"></div>
       </section>
 
-      <section id="proof" class="section">
-        <div class="section-head gsap-reveal">
-          <p class="kicker" data-i18n="proof_kicker">ÉRTÉKELÉSEK</p>
-          <h2 data-i18n="proof_title">
-            Emberi nyelven, valós problémákról és eredményekről
-          </h2>
-        </div>
-        <div class="proof-grid">
-          <article class="gsap-reveal">
-            <p class="stars">★★★★★ <span>5.0</span></p>
-            <p>
-              "Korábban sokan csak nézelődtek. Az új oldal óta több konkrét
-              időpontkérés jön, és kevesebb a bizonytalan üzenet."
-            </p>
-            <h3>Bíró Márk</h3>
-            <span>Barber tulajdonos, Budapest</span>
-          </article>
-          <article class="gsap-reveal">
-            <p class="stars">★★★★☆ <span>4.8</span></p>
-            <p>
-              "Végre érthetően el tudom magyarázni, mit kap a vendég. Emiatt
-              nyugodtabban érkeznek konzultációra."
-            </p>
-            <h3>Sallai Réka</h3>
-            <span>Fodrász szalonvezető, Győr</span>
-          </article>
-          <article class="gsap-reveal">
-            <p class="stars">★★★★★ <span>5.0</span></p>
-            <p>
-              "A pontozásos előszűrő sok időt spórol. Kevesebb lead jön be, de
-              sokkal pontosabban illeszkednek hozzánk."
-            </p>
-            <h3>Jakab Júlia</h3>
-            <span>Prémium stúdió, Budapest II.</span>
-          </article>
-        </div>
-      </section>
+      <section class="section contact-section" id="contact">
+        <div class="contact-layout">
+          <div class="contact-copy reveal">
+            <p class="eyebrow" id="contactEyebrow"></p>
+            <h2 id="contactTitle"></h2>
+            <p class="section-lead" id="contactLead"></p>
 
-      <section id="contact" class="section contact gsap-reveal">
-        <div>
-          <p class="kicker" data-i18n="contact_kicker">KAPCSOLAT</p>
-          <h2 data-i18n="contact_title">
-            Kérj személyre szabott koncepciót a saját niche-edre
-          </h2>
-          <p data-i18n="contact_body">
-            Írj pár sort a szalonodról, és kapsz egy konkrét javaslatot, hogyan
-            nézzen ki nálad az ügyfélszerző útvonal.
-          </p>
-          <div class="contact-links">
-            <a href="mailto:hello@hajzerstudio.hu">hello@hajzerstudio.hu</a>
-            <a href="tel:+36301234567">+36 30 123 4567</a>
+            <div class="contact-links">
+              <a href="mailto:hello@hajzerstudio.hu" id="contactEmail">hello@hajzerstudio.hu</a>
+              <a href="tel:+36301234567" id="contactPhone">+36 30 123 4567</a>
+              <a
+                href="https://wa.me/36301234567?text=Hello%20HajzerStudio%2C%20I%20would%20like%20a%20website%20concept."
+                target="_blank"
+                rel="noreferrer"
+                id="contactWhatsapp"
+              >
+                WhatsApp
+              </a>
+            </div>
+
+            <div class="contact-note" id="contactNote"></div>
           </div>
+
+          <form class="contact-form reveal" id="contactForm" action="#" method="post">
+            <label>
+              <span id="labelName"></span>
+              <input id="fieldName" name="name" type="text" autocomplete="name" />
+            </label>
+            <label>
+              <span id="labelBusiness"></span>
+              <input id="fieldBusiness" name="business" type="text" autocomplete="organization" />
+            </label>
+            <label>
+              <span id="labelNiche"></span>
+              <select id="fieldNiche" name="niche">
+                <option value="barber">Barber</option>
+                <option value="salon">Salon</option>
+                <option value="beauty">Beauty studio</option>
+              </select>
+            </label>
+            <label>
+              <span id="labelTiming"></span>
+              <select id="fieldTiming" name="timing">
+                <option value="1-2 weeks">1-2 weeks</option>
+                <option value="this month">This month</option>
+                <option value="planning">Planning phase</option>
+              </select>
+            </label>
+            <label class="field-wide">
+              <span id="labelMessage"></span>
+              <textarea id="fieldMessage" name="message" rows="5"></textarea>
+            </label>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="submitBrief"></button>
+              <button type="button" class="btn btn-secondary" id="copyBrief"></button>
+            </div>
+          </form>
         </div>
-        <form class="contact-form" action="#" method="post">
-          <label
-            >Név<input type="text" name="name" required placeholder="Név"
-          /></label>
-          <label
-            >Vállalkozás<input
-              type="text"
-              name="business"
-              required
-              placeholder="Szalon neve"
-          /></label>
-          <label
-            >Üzenet<textarea
-              name="message"
-              rows="4"
-              required
-              placeholder="Miben segítsek?"
-            ></textarea>
-          </label>
-          <button type="submit" class="btn btn-primary" data-i18n="form_btn">
-            Koncepciót kérek
-          </button>
-        </form>
+
+        <aside class="brief-preview reveal">
+          <p class="eyebrow" id="previewEyebrow"></p>
+          <h3 id="previewTitle"></h3>
+          <pre id="briefPreview"></pre>
+        </aside>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>© 2026 HajzerStudio. Prémium szépségipari weboldalak.</p>
+      <p id="footerCopy"></p>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+
+    <a href="#contact" class="floating-cta" id="floatingCta"></a>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "HajzerStudio",
+        "description": "Premium websites for beauty businesses, salons and barber shops.",
+        "areaServed": "Hungary",
+        "email": "hello@hajzerstudio.hu",
+        "telephone": "+36301234567",
+        "url": "https://hajzerstudio.hu"
+      }
+    </script>
   </body>
 </html>

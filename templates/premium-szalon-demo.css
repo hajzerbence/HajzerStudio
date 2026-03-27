@@ -1,0 +1,272 @@
+:root {
+  --bg: #0a0d13;
+  --surface: rgba(18, 22, 30, 0.9);
+  --line: #2d3546;
+  --text: #eef2fa;
+  --muted: #aeb8cb;
+  --accent: #d3e2ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Manrope, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(
+      760px 300px at 78% 0%,
+      rgba(211, 226, 255, 0.18),
+      transparent 62%
+    ),
+    linear-gradient(180deg, #090c12, #0f1520 48%, #090d13);
+}
+
+.nav,
+main {
+  width: min(1160px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+.nav {
+  margin-top: 1rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.brand {
+  margin-right: auto;
+  text-decoration: none;
+  color: var(--text);
+  font-family: "Playfair Display", serif;
+  letter-spacing: 0.08em;
+}
+nav {
+  display: flex;
+  gap: 0.8rem;
+}
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+}
+
+main {
+  margin-top: 1.2rem;
+  margin-bottom: 3rem;
+}
+.hero,
+.qualify,
+.result,
+.reviews article,
+.booking {
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface);
+}
+
+.hero {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 0.8rem;
+}
+.kicker {
+  margin: 0 0 0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: #d7e4ff;
+}
+.hero h1 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 4.1rem);
+  line-height: 1.04;
+  max-width: 14ch;
+}
+.hero p {
+  color: var(--muted);
+}
+.hero img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 0.9rem;
+}
+
+.btn {
+  text-decoration: none;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-weight: 700;
+  padding: 0.66rem 0.95rem;
+}
+.btn.primary {
+  border: none;
+  color: #101827;
+  background: linear-gradient(130deg, #f1f6ff, var(--accent));
+}
+
+.qualify,
+.result,
+.reviews,
+.booking {
+  margin-top: 0.8rem;
+}
+.qualify {
+  padding: 1rem;
+}
+.quiz-grid {
+  margin-top: 0.65rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.quiz-question {
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.7rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.quiz-question h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.quiz-question label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.quiz-result-box {
+  margin-top: 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.quiz-result-box p {
+  margin-top: 0.45rem;
+  color: var(--muted);
+}
+
+.result {
+  padding: 1rem;
+}
+.meta {
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+.ba-slider {
+  margin-top: 0.7rem;
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  overflow: hidden;
+}
+.ba-before,
+.ba-after {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+.ba-after {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 38% 0 0);
+}
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 62%;
+  width: 2px;
+  background: #eef4ff;
+}
+.ba-slider input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+.reviews article {
+  padding: 1rem;
+}
+.stars {
+  color: #f0b94a;
+  font-weight: 700;
+}
+.stars span {
+  color: #a2b0c6;
+  margin-left: 0.35rem;
+}
+.reviews p {
+  color: var(--muted);
+}
+
+.booking {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+.booking label {
+  display: grid;
+  gap: 0.25rem;
+  margin-bottom: 0.55rem;
+  color: var(--muted);
+}
+.booking input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: #0d121b;
+  color: var(--text);
+  padding: 0.68rem;
+  font: inherit;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+}
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 940px) {
+  nav {
+    display: none;
+  }
+  .hero,
+  .quiz-grid,
+  .reviews,
+  .booking {
+    grid-template-columns: 1fr;
+  }
+  .hero img,
+  .ba-before,
+  .ba-after {
+    height: 280px;
+  }
+}

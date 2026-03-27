@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prémium Szalon Demo | HajzerStudio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
+    <script type="module" crossorigin src="/assets/demo-common-B490_AOs.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/premium-ChlsRaRK.css">
+  </head>
+  <body data-profile="premium">
+    <header class="nav reveal">
+      <a href="#top" class="brand">ATELIER NOIR</a>
+      <nav>
+        <a href="#qualify">Szelekció</a>
+        <a href="#result">Eredmény</a>
+        <a href="#booking">Concierge</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero reveal">
+        <div>
+          <p class="kicker">CONCIERGE FLOW DEMO</p>
+          <h1>A cél nem sok lead. A cél a megfelelő vendég.</h1>
+          <p>
+            Ez a struktúra beléptet és szűr: high-ticket szolgáltatásnál ez
+            üzletileg kulcsfontosságú.
+          </p>
+          <a href="#qualify" class="btn primary">Szelekció indítása</a>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1200&q=80"
+          alt="Prémium szalon"
+        />
+      </section>
+
+      <section id="qualify" class="qualify reveal">
+        <h2>Előszűrő kérdőív pontozással</h2>
+        <p class="meta">
+          Ez segít eldönteni, hogy concierge vagy alap konzultáció legyen az első lépés.
+        </p>
+        <div class="quiz-grid">
+          <article class="quiz-question">
+            <h3>1) Mennyit tudsz rászánni egy alkalomra?</h3>
+            <label><input type="radio" name="q1" data-score="3" checked /> 60-75 perc</label>
+            <label><input type="radio" name="q1" data-score="6" /> 90+ perc</label>
+          </article>
+          <article class="quiz-question">
+            <h3>2) Nyitott vagy prémium otthoni rutinra?</h3>
+            <label><input type="radio" name="q2" data-score="2" checked /> Inkább egyszerű rutin</label>
+            <label><input type="radio" name="q2" data-score="5" /> Igen, követem a tervet</label>
+          </article>
+          <article class="quiz-question">
+            <h3>3) Mennyire fontos az egyedi, személyre szabott look?</h3>
+            <label><input type="radio" name="q3" data-score="3" checked /> Fontos, de rugalmas</label>
+            <label><input type="radio" name="q3" data-score="7" /> Ez az elsődleges célom</label>
+          </article>
+        </div>
+
+        <div class="quiz-result-box">
+          <button id="quizCalc" type="button" class="btn primary">Pontszám kiszámítása</button>
+          <p>Pontszám: <strong id="quizScore">8 pont</strong></p>
+          <p id="quizResult">
+            Töltsd ki a kérdéseket, majd nézd meg, melyik belépési útvonal ajánlott.
+          </p>
+        </div>
+      </section>
+
+      <section id="result" class="result reveal">
+        <h2>Esettanulmány - Signature átalakulás</h2>
+        <p class="meta">
+          Kiindulás: formátlan hossz, matt tónus. Eredmény: strukturált forma,
+          fényes finish.
+        </p>
+        <div class="ba-slider" data-ba-slider>
+          <img
+            class="ba-before"
+            src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1300&q=80"
+            alt="Kiindulási állapot"
+          />
+          <img
+            class="ba-after"
+            src="https://images.unsplash.com/photo-1522336284037-91f7da073525?auto=format&fit=crop&w=1300&q=80"
+            alt="Kész eredmény"
+          />
+          <span class="ba-handle"></span>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="62"
+            aria-label="Before after csúszka"
+          />
+        </div>
+      </section>
+
+      <section class="reviews reveal">
+        <article>
+          <p class="stars">★★★★★ <span>5.0</span></p>
+          <p>
+            "A concierge rendszer után sokkal pontosabb igényekkel jönnek az új
+            vendégek."
+          </p>
+          <strong>Júlia, alapító</strong>
+        </article>
+        <article>
+          <p class="stars">★★★★☆ <span>4.9</span></p>
+          <p>
+            "Kevesebb érdeklődő, de magasabb kosárérték - ez volt a cél és
+            működik."
+          </p>
+          <strong>Eszter, menedzser</strong>
+        </article>
+      </section>
+
+      <section id="booking" class="booking reveal">
+        <div>
+          <h2>Concierge csomag kalkulátor</h2>
+          <label
+            ><input type="checkbox" data-price="24900" checked /> Signature
+            Cut</label
+          >
+          <label
+            ><input type="checkbox" data-price="14900" /> Gloss finish</label
+          >
+          <label
+            ><input type="checkbox" data-price="19900" /> Private ritual
+            add-on</label
+          >
+          <p>Összesen: <strong id="calcTotal"></strong></p>
+        </div>
+        <form class="booking-form" action="#" method="post">
+          <label>Név<input type="text" required /></label>
+          <label>E-mail<input type="email" required /></label>
+          <label>Konzultáció<input type="datetime-local" required /></label>
+          <input id="scoreInput" type="hidden" name="qualificationScore" value="8" />
+          <button type="submit" class="btn primary">
+            Concierge jelentkezés
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Női Fodrászat Demo | HajzerStudio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Prata&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
+    <script type="module" crossorigin src="/assets/demo-common-B490_AOs.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/women-2JDR_qQw.css">
+  </head>
+  <body data-profile="women">
+    <div class="floating-shape" aria-hidden="true"></div>
+
+    <header class="nav reveal">
+      <a href="#top" class="brand">AURORA HAIR ATELIER</a>
+      <nav>
+        <a href="#selector">Stílusprofil</a>
+        <a href="#transformation">Átalakulás</a>
+        <a href="#booking">Konzultáció</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero reveal">
+        <div>
+          <p class="kicker">STYLE CONSULT DEMO</p>
+          <h1>Nem árlistával indítunk, hanem vendégprofillal.</h1>
+          <p>
+            Ez a struktúra azoknak a szalonoknak szól, ahol a személyes ajánlás
+            és a stílusmatch az első lépés.
+          </p>
+          <a href="#selector" class="btn primary">Profil kiválasztása</a>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1200&q=80"
+          alt="Női szalon"
+        />
+      </section>
+
+      <section id="selector" class="selector reveal">
+        <h2>Mi a fő célod most?</h2>
+        <div class="choice-row">
+          <button class="choice is-active" data-profile-choice="elegance">
+            Elegáns frissítés
+          </button>
+          <button class="choice" data-profile-choice="volume">
+            Volumen + textúra
+          </button>
+          <button class="choice" data-profile-choice="repair">
+            Szerkezetjavítás
+          </button>
+        </div>
+        <div class="result-card">
+          <h3 id="profileResultTitle">Elegáns megjelenés csomag</h3>
+          <p id="profileResultBody">
+            Signature vágás + tónusfrissítés + fényzáró finish, 90 perces
+            ajánlott útvonal.
+          </p>
+        </div>
+      </section>
+
+      <section id="transformation" class="transformation reveal">
+        <h2>Valós átalakulási példa</h2>
+        <p class="meta">
+          Kiindulás: fakó tónus, töredezett végek. Cél: élő fény, rendezett
+          forma.
+        </p>
+        <div class="ba-slider" data-ba-slider>
+          <img
+            class="ba-before"
+            src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1300&q=80"
+            alt="Kiindulási hajállapot"
+          />
+          <img
+            class="ba-after"
+            src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=1300&q=80"
+            alt="Kész eredmény"
+          />
+          <span class="ba-handle"></span>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="55"
+            aria-label="Before after csúszka"
+          />
+        </div>
+      </section>
+
+      <section class="reviews reveal">
+        <article>
+          <p class="stars">★★★★★ <span>5.0</span></p>
+          <p>
+            "A profilválasztós megoldás miatt sokkal jobb briefek jönnek be."
+          </p>
+          <strong>Réka, tulajdonos</strong>
+        </article>
+        <article>
+          <p class="stars">★★★★☆ <span>4.9</span></p>
+          <p>"A vendégek pontosabban látják, melyik csomag való nekik."</p>
+          <strong>Kata, senior stylist</strong>
+        </article>
+      </section>
+
+      <section id="booking" class="booking reveal">
+        <div>
+          <h2>Konzultációs díj kalkulátor</h2>
+          <label
+            ><input type="checkbox" data-price="14900" checked /> Signature
+            Cut</label
+          >
+          <label><input type="checkbox" data-price="6900" /> Gloss toner</label>
+          <label
+            ><input type="checkbox" data-price="7900" /> Repair ritual</label
+          >
+          <p>Összesen: <strong id="calcTotal"></strong></p>
+        </div>
+        <form class="booking-form" action="#" method="post">
+          <label>Név<input type="text" required /></label>
+          <label>E-mail<input type="email" required /></label>
+          <label>Dátum<input type="date" required /></label>
+          <button type="submit" class="btn primary">Konzultáció kérelme</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  </body>
+</html>

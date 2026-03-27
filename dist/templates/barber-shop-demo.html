@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Barber Shop Demo | HajzerStudio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
+    <script type="module" crossorigin src="/assets/demo-common-B490_AOs.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/barber-3x7ZEM3a.css">
+  </head>
+  <body data-profile="barber">
+    <header class="nav reveal">
+      <a href="#top" class="brand">IRON CUT DISTRICT</a>
+      <nav>
+        <a href="#slots">Szabad helyek</a>
+        <a href="#results">Eredmények</a>
+        <a href="#booking">Foglalás</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero reveal">
+        <div>
+          <p class="kicker">BARBER FUNNEL DEMO</p>
+          <h1>Gyors döntés. Azonnali foglalás. Stabil napi kapacitás.</h1>
+          <p>
+            Itt az első cél nem informálni, hanem gyorsan foglalásra vinni a
+            látogatót.
+          </p>
+          <a href="#booking" class="btn primary">Foglalok most</a>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?auto=format&fit=crop&w=1200&q=80"
+          alt="Barber munkafolyamat"
+        />
+      </section>
+
+      <section id="slots" class="slots reveal">
+        <h2>Mai szabad időpontok</h2>
+        <div class="slot-list">
+          <article class="slot-item">
+            <strong>10:30</strong><span>Máté</span>
+          </article>
+          <article class="slot-item">
+            <strong>12:00</strong><span>Áron</span>
+          </article>
+          <article class="slot-item">
+            <strong>15:40</strong><span>Bence</span>
+          </article>
+          <article class="slot-item">
+            <strong>18:10</strong><span>Máté</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="results" class="results reveal">
+        <h2>Átalakítás - Skin Fade + Beard</h2>
+        <p class="meta">
+          Kiindulás: rendezetlen kontúr, lapos átmenet. Cél: tiszta fade,
+          markáns arcél.
+        </p>
+        <div class="ba-slider" data-ba-slider>
+          <img
+            class="ba-before"
+            src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=1300&q=80"
+            alt="Kiindulási állapot"
+          />
+          <img
+            class="ba-after"
+            src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?auto=format&fit=crop&w=1300&q=80"
+            alt="Eredmény"
+          />
+          <span class="ba-handle"></span>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="60"
+            aria-label="Before after csúszka"
+          />
+        </div>
+      </section>
+
+      <section class="reviews reveal">
+        <article>
+          <p class="stars">★★★★★ <span>5.0</span></p>
+          <p>
+            "A foglalások jó része már első látogatásból jön, nincs felesleges
+            kör."
+          </p>
+          <strong>Dani, tulaj</strong>
+        </article>
+        <article>
+          <p class="stars">★★★★☆ <span>4.8</span></p>
+          <p>
+            "A vendégek értik, mit kapnak és mennyiért. Sokkal kevesebb kérdés."
+          </p>
+          <strong>Levi, üzletvezető</strong>
+        </article>
+      </section>
+
+      <section id="booking" class="booking reveal">
+        <div>
+          <h2>Gyors kalkulátor + időablak</h2>
+          <label
+            ><input type="checkbox" data-price="8900" checked /> Classic
+            Cut</label
+          >
+          <label
+            ><input type="checkbox" data-price="3900" /> Beard Lineup</label
+          >
+          <label><input type="checkbox" data-price="2900" /> Head Spa</label>
+          <p>Összesen: <strong id="calcTotal"></strong></p>
+
+          <div class="slot-picker">
+            <p class="slot-title">Válassz időablakot:</p>
+            <div class="slot-buttons">
+              <button type="button" data-slot="10:30" class="slot-btn is-active">
+                10:30
+              </button>
+              <button type="button" data-slot="12:00" class="slot-btn">12:00</button>
+              <button type="button" data-slot="15:40" class="slot-btn">15:40</button>
+              <button type="button" data-slot="18:10" class="slot-btn">18:10</button>
+            </div>
+            <p class="slot-picked">Kiválasztott idősáv: <strong id="selectedSlot">10:30</strong></p>
+          </div>
+        </div>
+        <form class="booking-form" action="#" method="post">
+          <label>Név<input type="text" required /></label>
+          <label>Telefon<input type="tel" required /></label>
+          <label>Megjegyzés<input type="text" placeholder="Pl. skin fade + szakáll" /></label>
+          <input id="slotInput" type="hidden" name="slot" value="10:30" />
+          <button type="submit" class="btn primary">Foglalás elküldése</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  </body>
+</html>
